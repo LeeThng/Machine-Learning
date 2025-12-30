@@ -86,3 +86,10 @@ Chạy trên Google Colab:
 3. Chọn menu Runtime > Run all (Ctrl + F9). Lưu ý:
    - Cần upload file dataset Womens Clothing E-Commerce Reviews.csv lên Colab.
   
+
+
+## Tác giả
+- Họ tên: Lê Đức Thắng
+- Mã SV: 12423032
+- Lớp: 12431
+- GV hướng dẫn: PGS. TS. Nguyễn Văn Hậu
