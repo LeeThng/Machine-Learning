@@ -6,10 +6,7 @@ import re
 import os
 
 
-# --- ĐOẠN CODE KIỂM TRA (DEBUG) ---
-st.write("📂 Đường dẫn hiện tại:", os.getcwd())
-st.write("📄 Danh sách file thực tế đang có:", os.listdir())
-# ----------------------------------
+
 
 # 1. CẤU HÌNH TRANG WEB
 st.set_page_config(
@@ -26,9 +23,9 @@ def load_models():
         return None, None, None
     
     # Load 3 file .pkl lên bộ nhớ
-    model = joblib.load('sentiment_model.pkl')
-    tfidf = joblib.load('tfidf_vectorizer.pkl')
-    scaler = joblib.load('scaler.pkl')
+    model = joblib.load('sentiment_model.pkl.pkl')
+    tfidf = joblib.load('tfidf_vectorizer.pkl.pkl')
+    scaler = joblib.load('scaler.pkl.pkl')
     return model, tfidf, scaler
 
 # Load ngay khi mở web
@@ -91,3 +88,4 @@ if st.button("🔍 PHÂN TÍCH NGAY", type="primary"):
         except Exception as e:
 
             st.error(f"Có lỗi xảy ra: {e}")
+
