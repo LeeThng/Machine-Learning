@@ -5,34 +5,28 @@ import scipy.sparse as sp
 import re
 import os
 
-import streamlit as st
 
-# --- CAMERA GIÁM SÁT (DEBUG) ---
-st.title("🕵️ CHẾ ĐỘ THÁM TỬ")
+# --- SỬA ĐOẠN NÀY ---
 
-# 1. Xem Streamlit đang đứng ở đâu?
-current_path = os.getcwd()
-st.info(f"📍 Streamlit đang đứng tại: `{current_path}`")
+# 1. Lấy đường dẫn chính xác nơi file app.py đang nằm
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# 2. Xem xung quanh có những file gì?
-files_here = os.listdir(current_path)
-st.write("📂 Danh sách file nó nhìn thấy:", files_here)
+# 2. Tạo đường dẫn tuyệt đối đến file model
+# (Nó sẽ tự ghép thành: /Thư/Mục/Của/Bạn/sentiment_model.pkl)
+model_path = os.path.join(current_dir, 'sentiment_model.pkl')
+tfidf_path = os.path.join(current_dir, 'tfidf_vectorizer.pkl')
+scaler_path = os.path.join(current_dir, 'scaler.pkl')
 
-# 3. Kiểm tra cụ thể xem có file model không?
-target_file = 'sentiment_model.pkl' # Tên file bạn cần tìm
-if target_file in files_here:
-    st.success(f"✅ Đã tìm thấy '{target_file}'! (Nó ở ngay đây)")
-else:
-    st.error(f"❌ KHÔNG THẤY '{target_file}' đâu cả!")
-    # Thử tìm xem nó có nằm trong thư mục con nào không
-    for root, dirs, files in os.walk(current_path):
-        if target_file in files:
-            found_path = os.path.join(root, target_file)
-            st.warning(f"⚠️ Á đù! Tìm thấy nó trốn ở đây này: `{found_path}`")
-            st.markdown(f"👉 **Cách sửa:** Bạn phải đổi code load thành: `joblib.load('{found_path}')`")
+# 3. Load model bằng đường dẫn tuyệt đối
+try:
+    model = joblib.load(model_path)
+    tfidf = joblib.load(tfidf_path)
+    scaler = joblib.load(scaler_path)
+except FileNotFoundError as e:
+    st.error(f"❌ Vẫn không thấy file! Máy đang tìm tại: {model_path}")
+    st.stop()
 
-st.markdown("---")
-# -------------------------------
+# --------------------
 
 
 # 1. CẤU HÌNH TRANG WEB
@@ -115,5 +109,6 @@ if st.button("🔍 PHÂN TÍCH NGAY", type="primary"):
         except Exception as e:
 
             st.error(f"Có lỗi xảy ra: {e}")
+
 
 
