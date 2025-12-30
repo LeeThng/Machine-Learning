@@ -1,0 +1,19 @@
+# Data Source: Women's E-Commerce Clothing Reviews
+
+## Thông tin Dataset
+- **Tên:** Women's E-Commerce Clothing Reviews
+- **Nguồn:** Kaggle
+- **Link gốc:** [https://www.kaggle.com/datasets/nicapotato/womens-ecommerce-clothing-reviews](https://www.kaggle.com/datasets/nicapotato/womens-ecommerce-clothing-reviews)
+
+## Hướng dẫn tải dữ liệu
+
+1. Truy cập đường link Kaggle ở trên.
+2. Đăng nhập tài khoản Kaggle và nhấn nút **Download**.
+3. Giải nén file zip tải về.
+4. Copy file `Womens Clothing E-Commerce Reviews.csv` vào thư mục `data/` này.
+
+
+```bash
+kaggle datasets download -d nicapotato/womens-ecommerce-clothing-reviews -p data/
+unzip data/womens-ecommerce-clothing-reviews.zip -d data/
+rm data/womens-ecommerce-clothing-reviews.zip
