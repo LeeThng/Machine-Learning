@@ -1,0 +1,23 @@
+# --- 1. Rác của Python (Tự sinh ra khi chạy code) ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- 2. Rác của Google Colab/Jupyter (QUAN TRỌNG NHẤT) ---
+# Nếu không chặn cái này, GitHub của bạn sẽ đầy rác checkpoint
+.ipynb_checkpoints/
+
+# --- 3. Môi trường ảo (Thư viện tải về) ---
+# Không bao giờ up thư viện lên GitHub, chỉ up requirements.txt
+venv/
+env/
+.venv/
+.env
+
+# --- 4. Rác của Windows/Mac ---
+.DS_Store
+Thumbs.db
+
+# --- 5. Cấu hình IDE (VS Code, PyCharm...) ---
+.vscode/
+.idea/
