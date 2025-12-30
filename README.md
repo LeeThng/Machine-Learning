@@ -86,6 +86,21 @@ Chạy trên Google Colab:
 3. Chọn menu Runtime > Run all (Ctrl + F9). Lưu ý:
    - Cần upload file dataset Womens Clothing E-Commerce Reviews.csv lên Colab.
   
+### Chạy demo
+- Truy cập streamlit.io
+- Chọn My app > Create app > Deploy a public app from GitHub > Paste GitHub URL
+- Gán link của file demo vô GitHub URL
+- Click Deloy
+  
+### Cấu trúc thư mục dự án
+- app/: Source code chính.
+- demo/: demo.py.
+- data/: Data và hướng dẫn tải data.
+- reports/: Báo cáo.
+- slides/: Slide thuyết trình.
+- requirements.txt
+- README.md
+- .gitignore
 
 
 ## Tác giả
