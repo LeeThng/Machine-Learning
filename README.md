@@ -14,7 +14,7 @@ Nguồn dữ liệu: Kaggle
 
 Tên bộ dữ liệu: Women's E-Commerce Clothing Reviews
 
-Link tải: Click vào đây để tải
+Link tải: [Click vào đây để tải](https://www.kaggle.com/datasets/nicapotato/womens-ecommerce-clothing-reviews)
 
 Mô tả các cột chính:
 
@@ -81,7 +81,7 @@ KNN:
 
 ### Chạy train
 Chạy trên Google Colab:
-1. Truy cập Google Colab.
+1. Truy cập [Google Colab.](https://colab.research.google.com)
 2. Chọn File > Upload notebook, chọn file
 3. Chọn menu Runtime > Run all (Ctrl + F9). Lưu ý:
    - Cần upload file dataset Womens Clothing E-Commerce Reviews.csv lên Colab.
