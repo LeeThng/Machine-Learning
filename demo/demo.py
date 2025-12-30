@@ -6,27 +6,7 @@ import re
 import os
 
 
-# --- SỬA ĐOẠN NÀY ---
 
-# 1. Lấy đường dẫn chính xác nơi file app.py đang nằm
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# 2. Tạo đường dẫn tuyệt đối đến file model
-# (Nó sẽ tự ghép thành: /Thư/Mục/Của/Bạn/sentiment_model.pkl)
-model_path = os.path.join(current_dir, 'sentiment_model.pkl')
-tfidf_path = os.path.join(current_dir, 'tfidf_vectorizer.pkl')
-scaler_path = os.path.join(current_dir, 'scaler.pkl')
-
-# 3. Load model bằng đường dẫn tuyệt đối
-try:
-    model = joblib.load(model_path)
-    tfidf = joblib.load(tfidf_path)
-    scaler = joblib.load(scaler_path)
-except FileNotFoundError as e:
-    st.error(f"❌ Vẫn không thấy file! Máy đang tìm tại: {model_path}")
-    st.stop()
-
-# --------------------
 
 
 # 1. CẤU HÌNH TRANG WEB
@@ -44,9 +24,9 @@ def load_models():
         return None, None, None
     
     # Load 3 file .pkl lên bộ nhớ
-    model = joblib.load('sentiment_model.pkl')
-    tfidf = joblib.load('tfidf_vectorizer.pkl')
-    scaler = joblib.load('scaler.pkl')
+    model = joblib.load('/mount/src/machine-learning/demo/sentiment_model.pkl')
+    tfidf = joblib.load('/mount/src/machine-learning/demo/tfidf_vectorizer.pkl')
+    scaler = joblib.load('/mount/src/machine-learning/demo/scaler.pkl')
     return model, tfidf, scaler
 
 # Load ngay khi mở web
@@ -109,6 +89,7 @@ if st.button("🔍 PHÂN TÍCH NGAY", type="primary"):
         except Exception as e:
 
             st.error(f"Có lỗi xảy ra: {e}")
+
 
 
 
