@@ -5,6 +5,12 @@ import scipy.sparse as sp
 import re
 import os
 
+
+# --- ĐOẠN CODE KIỂM TRA (DEBUG) ---
+st.write("📂 Đường dẫn hiện tại:", os.getcwd())
+st.write("📄 Danh sách file thực tế đang có:", os.listdir())
+# ----------------------------------
+
 # 1. CẤU HÌNH TRANG WEB
 st.set_page_config(
     page_title="AI Phân Tích Cảm Xúc",
@@ -83,4 +89,5 @@ if st.button("🔍 PHÂN TÍCH NGAY", type="primary"):
                 st.error(f"☹️ KẾT QUẢ: TIÊU CỰC (Thất vọng) - Độ tin cậy: {confidence}")
                 
         except Exception as e:
+
             st.error(f"Có lỗi xảy ra: {e}")
